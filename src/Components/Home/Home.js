@@ -12,6 +12,7 @@ export default class Home extends React.Component {
     render(){
         return (
             <div>
+                
                 <HeaderProdutos>
                     <p>Quantidade de produtos: {this.props.produtos.length}</p>
                     <label>Ordenar por: 
