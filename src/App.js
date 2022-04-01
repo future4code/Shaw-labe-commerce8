@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import Home from './Components/Home/Home'
 import CardProduto from './Components/CardProduto/CardProduto';
+import Images from './img/Images'
 
 const DisplayProdutos = styled.div`
     display: flex;
@@ -15,7 +16,59 @@ const ListaProdutos = styled.div`
 class App extends React.Component {
     state = {
         produtos: [{
-            id: 1,
+            id: 1
+            name: "Balões metálicos",
+            value: 15.0,
+            imageUrl: Images.balao,
+        },
+        {
+            id: 2,
+            name: "Bonecos Astronautas",
+            value: 27.0,
+            imageUrl: Images.bonecoAstro,
+        },
+        {
+            id: 3,
+            name: "Miniaturas de Foguetes",
+            value: 24.0,
+            imageUrl: Images.bonecoFoguete,
+        },
+        {
+            id: 4,
+            name: "Capa para Celular",
+            value: 12.0,
+            imageUrl: Images.capaCelular,
+        },
+        {
+            id: 5,
+            name: "Conjunto Colar de Casal Magnético",
+            value: 16.0,
+            imageUrl: Images.colar,
+        },
+        {
+            id: 6,
+            name: "Luminária Globo Estrelas",
+            value: 42.0,
+            imageUrl: Images.luminaria,
+        },
+        {
+            id: 7,
+            name: "Cordão com Luzes Tema Espacial",
+            value: 39.0,
+            imageUrl: Images.luzes,
+        },
+        {
+            id: 8,
+            name: "Mochila Infantil Espaço",
+            value: 69.0,
+            imageUrl: Images.mochilaEspaco,
+        },
+        {
+            id: 9,
+            name: "Mochila para Pets",
+            value: 340.0,
+            imageUrl: Images.mochilaPet,
+
             name: "Foguete da Missão Apollo 11",
             value: 10000.0,
             imageUrl: "https://picsum.photos/200/200",
@@ -40,6 +93,7 @@ class App extends React.Component {
             valorMinimo:"",
             valorMaximo:"",
             pesquisa:""
+
         }],
         ordem: '',
         pesquisa:"",

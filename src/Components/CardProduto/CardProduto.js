@@ -6,12 +6,22 @@ const Card = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 10px;
     padding-bottom: 10px;
     width: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
+    transition: all .2s ease-in-out;
+    :hover {
+        transform: scale(1.1);
+    }
     img {
         width: 200px;
+    }
+    h3 {
+        padding: 0 10px;
     }
 `
 

@@ -17,6 +17,7 @@ export default class Home extends React.Component {
                     <p>Quantidade de produtos: {this.props.produtos.length}</p>
                     <label>Ordenar por: 
                         <select onChange={this.props.changeOrdem}>
+                            <option value=''>--- Nenhum ---</option>
                             <option value='crescente'>Preço crescente</option>
                             <option value='decrescente'>Preço decrescente</option>
                             <option value='nomeAZ'>Nome A-Z</option>
