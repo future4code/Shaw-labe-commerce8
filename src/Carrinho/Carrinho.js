@@ -5,14 +5,15 @@ import CardItemCarrinho from "./CardItemCarrinho";
 
 const ContainerCarrinho = styled.div `
 padding: 8px;
-border: 1px solid white;
-color: white;
+border: 1px solid black;
+color: black;
+width: 300px;
 `
 
 const ListaCarrinho = styled.div `
     display: grid;
     gap: 4px;
-    color: white;
+    color: black;
 `
 
 class Carrinho extends React.Component {
@@ -34,7 +35,7 @@ class Carrinho extends React.Component {
                 <ListaCarrinho>
                     {this.props.produtosNoCarrinho.map((produto) => {
                         return <CardItemCarrinho 
-                        key={produto.id} 
+                        key={produto.id+10} 
                         itemCarrinho={produto}
                         removerProdutoDoCarrinho={this.props.removerProdutoDoCarrinho}
                         />

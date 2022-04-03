@@ -6,11 +6,11 @@ const CardItemCart = styled.div `
     grid-auto-flow: column;
     gap: 8px;
     align-items: center;
-    color: white;
+    color: black;
     margin: 16px 0;
     p{
         margin: 0;
-        color: white;
+        color: black;
     }
 `
 
@@ -18,7 +18,7 @@ const BotaoRemover = styled.button `
     align-self: center;
     margin-top: 8px;
     background-color: #4b2d6d;
-    color: white;
+    color: black;
     border-radius: 5px;
     `
 
@@ -29,7 +29,7 @@ class CardItemCarrinho extends React.Component {
     return (
         <CardItemCart>
             <p>{this.props.itemCarrinho.quantidade}x</p>
-            <p>{this.props.itemCarrinho.texto}</p>
+            <p>{this.props.itemCarrinho.nome}</p>
             <BotaoRemover onClick={() => this.props.removerProdutoDoCarrinho(this.props.itemCarrinho.id)}>Remover</BotaoRemover>
         </CardItemCart>
     )
