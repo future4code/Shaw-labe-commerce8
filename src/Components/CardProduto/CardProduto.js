@@ -6,7 +6,6 @@ const Card = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* border: 1px solid black; */
     margin: 10px;
     padding-bottom: 10px;
     width: 200px;
@@ -30,10 +29,11 @@ export default class CardProduto extends React.Component {
         return (
             
             <Card>
-                <img src={this.props.imgURL} />
+                <img src={this.props.imgURL} alt={this.props.nomeProduto} />
                 <h3>{this.props.nomeProduto}</h3>
                 <p>R${this.props.preco},00</p>
-                <button onClick={this.props.addCarrinho}>Adicionar ao carrinho</button>
+                <button onClick={() => this.props.addCarrinho(this.props.idProduto)}>Adicionar ao carrinho</button>
+                {/* {console.log('id card', typeof this.props.idProduto)} */}
             </Card>
 
             
