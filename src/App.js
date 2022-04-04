@@ -6,24 +6,65 @@ import Carrinho from './Carrinho/Carrinho'
 import Images from './img/Images'
 
 const MainContainer = styled.div`
-    display: flex;
+   display:grid;
+   grid-template-columns: 20vw 60vw 20vw;
+  
+
+    background-color:black;
+    color:white;
+`
+
+const FilterList = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center
+
 `
 
 const FilterContainer = styled.div`
-    width: 200px;
+   display:flex;
+   flex-direction: column;
+   grid-column: 1/2;
     div {
         margin: 8px;
+        margin-top: 20px;
+        padding-top: 20px;
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    h3{
+       text-align:center;
+    }
+
+    label{
+        
+        margin-left: 10px
+    }
+
+    input{
+        margin-top:10px;
+        width:120px;
+        height: 20px ;
+        text-align:center;
+
+
+        
     }
 `
+
+
 
 const DisplayProdutos = styled.div`
     display: flex;
     flex-direction: column;
     min-width: 450px;
+    grid-column: 2/3;
 `
 const ListaProdutos = styled.div`
     display: flex;
     flex-wrap: wrap;
+    
 `
 
 class App extends React.Component {
@@ -202,32 +243,33 @@ class App extends React.Component {
         return (
             <MainContainer>
                 <FilterContainer>
-                    <div>
-                        <label>Valor mínimo</label>
+                    <FilterList>
+                        <h3>Filtro</h3>
+                        <label>Valor mínimo:</label>
                         <input
                             type="number"
                             placeholder="Valor mínimo"
                             valor={this.state.valorMinimo}
                             onChange={this.onChangeValorMinimo}
                         />
-                    </div>
-                    <div>
-                        <label>Valor máximo</label>
+                    </FilterList>
+                    <FilterList>
+                        <label>Valor máximo:</label>
                         <input
                             type="number"
                             placeholder="Valor máximo"
                             valor={this.state.valorMaximo}
                             onChange={this.onChangeValorMaximo}
                         />
-                    </div>
-                    <div>
-                        <label>Pesquisa</label>
+                    </FilterList>
+                    <FilterList>
+                        <label>Buscar nome:</label>
                         <input
                             placeholder="Pesquisa"
                             valor={this.state.pesquisa}
                             onChange={this.onChangePesquisa}
                         />
-                    </div>
+                    </FilterList>
                 </FilterContainer>
                 <DisplayProdutos>
 

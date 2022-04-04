@@ -6,6 +6,15 @@ const HeaderProdutos = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+    margin-right:70px;
+
+    select{
+        margin-left:5px;
+        outline: none;
+        border-radius:10px;
+        text-align:center;
+        
+    }
 `
 
 export default class Home extends React.Component {
