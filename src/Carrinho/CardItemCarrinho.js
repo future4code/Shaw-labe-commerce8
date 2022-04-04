@@ -6,11 +6,9 @@ const CardItemCart = styled.div `
     grid-auto-flow: column;
     gap: 8px;
     align-items: center;
-    color: black;
     margin: 16px 0;
     p{
         margin: 0;
-        color: black;
     }
 `
 
@@ -18,7 +16,7 @@ const BotaoRemover = styled.button `
     align-self: center;
     margin-top: 8px;
     background-color: #4b2d6d;
-    color: black;
+    color: white;
     border-radius: 5px;
     `
 

@@ -7,6 +7,30 @@ import Images from './img/Images'
 
 const MainContainer = styled.div`
     display: flex;
+    flex-direction: column;
+    background-color: #262223;
+    color: white;
+    min-height: 100vh;
+`
+
+const Content = styled.div`
+    display: flex;
+    padding: 2em 1em;
+`
+
+const Header = styled.header`
+    background-color: black;
+    display: flex;
+    align-items: center;
+    img {
+        background-color: white;
+        border-radius: 50%;
+        height: 80px;
+        margin: 1em;
+    }
+    h1 {
+        margin-left: 1em;
+    }
 `
 
 const FilterContainer = styled.div`
@@ -24,6 +48,13 @@ const DisplayProdutos = styled.div`
 const ListaProdutos = styled.div`
     display: flex;
     flex-wrap: wrap;
+`
+
+const Footer = styled.footer`
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 class App extends React.Component {
@@ -201,56 +232,65 @@ class App extends React.Component {
 
         return (
             <MainContainer>
-                <FilterContainer>
-                    <div>
-                        <label>Valor mínimo</label>
-                        <input
-                            type="number"
-                            placeholder="Valor mínimo"
-                            valor={this.state.valorMinimo}
-                            onChange={this.onChangeValorMinimo}
-                        />
-                    </div>
-                    <div>
-                        <label>Valor máximo</label>
-                        <input
-                            type="number"
-                            placeholder="Valor máximo"
-                            valor={this.state.valorMaximo}
-                            onChange={this.onChangeValorMaximo}
-                        />
-                    </div>
-                    <div>
-                        <label>Pesquisa</label>
-                        <input
-                            placeholder="Pesquisa"
-                            valor={this.state.pesquisa}
-                            onChange={this.onChangePesquisa}
-                        />
-                    </div>
-                </FilterContainer>
-                <DisplayProdutos>
+                <Header>
+                    <img src='https://cdn-icons-png.flaticon.com/512/2026/2026525.png' alt='astro logo' />
+                    <h1>Astrolojinha</h1>
+                </Header>
+                <Content style={{backgroundImage: "url(/bg.jpg)"}}>
+                    <FilterContainer>
+                        <div>
+                            <label>Valor mínimo</label>
+                            <input
+                                type="number"
+                                placeholder="Valor mínimo"
+                                valor={this.state.valorMinimo}
+                                onChange={this.onChangeValorMinimo}
+                            />
+                        </div>
+                        <div>
+                            <label>Valor máximo</label>
+                            <input
+                                type="number"
+                                placeholder="Valor máximo"
+                                valor={this.state.valorMaximo}
+                                onChange={this.onChangeValorMaximo}
+                            />
+                        </div>
+                        <div>
+                            <label>Pesquisa</label>
+                            <input
+                                placeholder="Pesquisa"
+                                valor={this.state.pesquisa}
+                                onChange={this.onChangePesquisa}
+                            />
+                        </div>
+                    </FilterContainer>
+                    <DisplayProdutos>
 
-                    <Home produtos={this.state.produtos} changeOrdem={this.onChangeOrdem} />
-                    <ListaProdutos>
+                        <Home produtos={this.state.produtos} changeOrdem={this.onChangeOrdem} />
+                        <ListaProdutos>
 
-                        {listaFiltrada.map(produto => {
-                            return (<CardProduto
-                                key={produto.id}
-                                idProduto={produto.id}
-                                imgURL={produto.imageUrl}
-                                nomeProduto={produto.nome}
-                                preco={produto.valor}
-                                addCarrinho={this.adicionarProdutoNoCarrinho} />)
-                        })}
-                    </ListaProdutos>
-                </DisplayProdutos>
-                <div>
-                    <Carrinho
-                        produtosNoCarrinho={this.state.produtosNoCarrinho}
-                        removerProdutoDoCarrinho={this.removerProdutoDoCarrinho}
-                    />
-                </div>
+                            {listaFiltrada.map(produto => {
+                                return (<CardProduto
+                                    key={produto.id}
+                                    idProduto={produto.id}
+                                    imgURL={produto.imageUrl}
+                                    nomeProduto={produto.nome}
+                                    preco={produto.valor}
+                                    addCarrinho={this.adicionarProdutoNoCarrinho} />)
+                            })}
+                        </ListaProdutos>
+                    </DisplayProdutos>
+                    <div>
+                        <Carrinho
+                            produtosNoCarrinho={this.state.produtosNoCarrinho}
+                            removerProdutoDoCarrinho={this.removerProdutoDoCarrinho}
+                        />
+                    </div>
+                </Content>
+                <Footer>
+                    <h4>Produtos de outro mundo!</h4>
+                </Footer>
             </MainContainer>
         )
     }

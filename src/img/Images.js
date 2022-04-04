@@ -7,6 +7,7 @@ import Luminaria from './luminaria-espaco.png'
 import Luzes from './luzes.png'
 import MochilaEspaco from './mochila-espaco.png'
 import MochilaPet from './mochila-pet.png'
+// import Background from './bg.jpg'
 
 const Images = {
     balao: BalaoAstronauta,
@@ -18,6 +19,7 @@ const Images = {
     luzes: Luzes,
     mochilaEspaco: MochilaEspaco,
     mochilaPet: MochilaPet
+    // background: Background
 }
 
 export default Images

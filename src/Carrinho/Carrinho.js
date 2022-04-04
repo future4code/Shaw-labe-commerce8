@@ -6,14 +6,13 @@ import CardItemCarrinho from "./CardItemCarrinho";
 const ContainerCarrinho = styled.div `
 padding: 8px;
 border: 1px solid black;
-color: black;
 width: 300px;
+background-color: #262223;
 `
 
 const ListaCarrinho = styled.div `
     display: grid;
     gap: 4px;
-    color: black;
 `
 
 class Carrinho extends React.Component {
