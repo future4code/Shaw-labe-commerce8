@@ -11,17 +11,20 @@ const MainContainer = styled.div`
     background-color: #262223;
     color: white;
     min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 `
 
 const Content = styled.div`
-   display:grid;
-   grid-template-columns: 20vw 60vw 20vw;
+    display: flex;
+    width: 100vw;
+    padding: 1em;
 `
 
 const Header = styled.header`
     background-color: black;
     display: flex;
     align-items: center;
+    width: 100%;
     img {
         background-color: white;
         border-radius: 50%;
@@ -31,46 +34,44 @@ const Header = styled.header`
     h1 {
         margin-left: 1em;
     }
-
-const FilterList = styled.div`
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center
 `
 
 const FilterContainer = styled.div`
    display:flex;
    flex-direction: column;
-   grid-column: 1/2;
-    div {
-        margin: 8px;
-        margin-top: 20px;
-        padding-top: 20px;
-        font-family: Arial, Helvetica, sans-serif
-    }
-
     h3{
        text-align:center;
     }
-
     label{
         
         margin-left: 10px
     }
-
     input{
         margin-top:10px;
         width:120px;
         height: 20px ;
         text-align:center;
-
-
-        
     }
 `
 
+const FilterList = styled.div`
+    background-color: #262223;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+    padding-bottom: 8px;
+    width: 200px;
+    text-align: center;
+`
 
+const FilterItem = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding: 1em 0;
+        margin: 8px;
+        margin-top: 20px;
+`
 
 const DisplayProdutos = styled.div`
     display: flex;
@@ -270,33 +271,36 @@ class App extends React.Component {
                     <img src='https://cdn-icons-png.flaticon.com/512/2026/2026525.png' alt='astro logo' />
                     <h1>Astrolojinha</h1>
                 </Header>
-                <Content style={{backgroundImage: "url(/bg.jpg)"}}>
+                <Content style={{ backgroundImage: "url(/bg.jpg)" }}>
                     <FilterContainer>
                         <FilterList>
-                            <label>Valor mínimo</label>
-                            <input
-                                type="number"
-                                placeholder="Valor mínimo"
-                                valor={this.state.valorMinimo}
-                                onChange={this.onChangeValorMinimo}
-                            />
-                        </FilterList>
-                        <FilterList>
-                            <label>Valor máximo</label>
-                            <input
-                                type="number"
-                                placeholder="Valor máximo"
-                                valor={this.state.valorMaximo}
-                                onChange={this.onChangeValorMaximo}
-                            />
-                        </FilterList>
-                        <FilterList>
-                            <label>Pesquisa</label>
-                            <input
-                                placeholder="Pesquisa"
-                                valor={this.state.pesquisa}
-                                onChange={this.onChangePesquisa}
-                            />
+                            <h2>Filtros</h2>
+                            <FilterItem>
+                                <label>Valor mínimo</label>
+                                <input
+                                    type="number"
+                                    placeholder="Valor mínimo"
+                                    valor={this.state.valorMinimo}
+                                    onChange={this.onChangeValorMinimo}
+                                />
+                            </FilterItem>
+                            <FilterItem>
+                                <label>Valor máximo</label>
+                                <input
+                                    type="number"
+                                    placeholder="Valor máximo"
+                                    valor={this.state.valorMaximo}
+                                    onChange={this.onChangeValorMaximo}
+                                />
+                            </FilterItem>
+                            <FilterItem>
+                                <label>Pesquisa</label>
+                                <input
+                                    placeholder="Pesquisa"
+                                    valor={this.state.pesquisa}
+                                    onChange={this.onChangePesquisa}
+                                />
+                            </FilterItem>
                         </FilterList>
                     </FilterContainer>
                     <DisplayProdutos>
