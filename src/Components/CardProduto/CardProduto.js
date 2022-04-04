@@ -11,7 +11,8 @@ const Card = styled.div`
     width: 200px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px grey;
+    box-shadow: 5px 5px 10px black;
+    background-color: #262223;
     transition: all .2s ease-in-out;
     :hover {
         transform: scale(1.1);
