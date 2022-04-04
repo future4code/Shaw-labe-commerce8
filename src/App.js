@@ -14,8 +14,8 @@ const MainContainer = styled.div`
 `
 
 const Content = styled.div`
-    display: flex;
-    padding: 2em 1em;
+   display:grid;
+   grid-template-columns: 20vw 60vw 20vw;
 `
 
 const Header = styled.header`
@@ -31,23 +31,57 @@ const Header = styled.header`
     h1 {
         margin-left: 1em;
     }
+
+const FilterList = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center
 `
 
 const FilterContainer = styled.div`
-    width: 200px;
+   display:flex;
+   flex-direction: column;
+   grid-column: 1/2;
     div {
         margin: 8px;
+        margin-top: 20px;
+        padding-top: 20px;
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    h3{
+       text-align:center;
+    }
+
+    label{
+        
+        margin-left: 10px
+    }
+
+    input{
+        margin-top:10px;
+        width:120px;
+        height: 20px ;
+        text-align:center;
+
+
+        
     }
 `
+
+
 
 const DisplayProdutos = styled.div`
     display: flex;
     flex-direction: column;
     min-width: 450px;
+    grid-column: 2/3;
 `
 const ListaProdutos = styled.div`
     display: flex;
     flex-wrap: wrap;
+    
 `
 
 const Footer = styled.footer`
@@ -238,7 +272,7 @@ class App extends React.Component {
                 </Header>
                 <Content style={{backgroundImage: "url(/bg.jpg)"}}>
                     <FilterContainer>
-                        <div>
+                        <FilterList>
                             <label>Valor mínimo</label>
                             <input
                                 type="number"
@@ -246,8 +280,8 @@ class App extends React.Component {
                                 valor={this.state.valorMinimo}
                                 onChange={this.onChangeValorMinimo}
                             />
-                        </div>
-                        <div>
+                        </FilterList>
+                        <FilterList>
                             <label>Valor máximo</label>
                             <input
                                 type="number"
@@ -255,15 +289,15 @@ class App extends React.Component {
                                 valor={this.state.valorMaximo}
                                 onChange={this.onChangeValorMaximo}
                             />
-                        </div>
-                        <div>
+                        </FilterList>
+                        <FilterList>
                             <label>Pesquisa</label>
                             <input
                                 placeholder="Pesquisa"
                                 valor={this.state.pesquisa}
                                 onChange={this.onChangePesquisa}
                             />
-                        </div>
+                        </FilterList>
                     </FilterContainer>
                     <DisplayProdutos>
 
