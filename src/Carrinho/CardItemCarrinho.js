@@ -2,23 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 const CardItemCart = styled.div `
-    display: grid;
-    grid-auto-flow: column;
-    gap: 8px;
+   display:flex;
+   flex-direction: column;
+   margin-right: 50px;
+
+   
+    
     align-items: center;
     color: white;
-    margin: 16px 0;
-    p{
-        margin: 0;
-        color: white;
-    }
+   justify-content: center;
+   
 `
 
 const BotaoRemover = styled.button `
     align-self: center;
     margin-top: 8px;
-    background-color: #4b2d6d;
-    color: white;
+    background-color:white;
+    color: black;
     border-radius: 5px;
     `
 
@@ -29,7 +29,7 @@ class CardItemCarrinho extends React.Component {
     return (
         <CardItemCart>
             <p>{this.props.itemCarrinho.quantidade}x</p>
-            <p>{this.props.itemCarrinho.texto}</p>
+            <p>{this.props.itemCarrinho.nome}</p>
             <BotaoRemover onClick={() => this.props.removerProdutoDoCarrinho(this.props.itemCarrinho.id)}>Remover</BotaoRemover>
         </CardItemCart>
     )
